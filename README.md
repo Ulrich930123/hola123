@@ -1,4 +1,9 @@
-<p>Para agregar la base de datos tiene que crearla y que diga Blog </p>
+<p>Para agregar la base de datos tiene que crearla y que diga Blog, ademas se tiene que correr:</p>
+<p>composer install</p>
+<p>npm install</p>
+<p>agregar .env y redire3ccionar la base de datos a blog</p>
+<p>npm run build</p>
+<p>AHORA SI corre la aplicacion</p>
 <br/>
 <br/>
 <br/>
