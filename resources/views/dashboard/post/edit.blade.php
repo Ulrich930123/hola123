@@ -19,20 +19,17 @@
     <textarea class="form-control" type="text" name="description" id="description" rows="3"
      value="{{ old('description',$post->description) }}">{{ $post->description }}</textarea>
 </div>
+{{-- fila 3 --}}
+<div class="form-group">
+    <label for="category_id">Categorias</label>
+    <select class="form-control" type="text" name="category_id" id="category_id" >
+    @foreach ($categories as $category)
+    <option value="{{ $category->id }}">{{ $category->name }}</option>    
+    @endforeach
+    </select>
+</div>
 <button class="btn btn-success btn-sm" type="submit">Editar</button>
 
 </main>
-</form>
-<form action="{{ route("posT.image",$post) }}" method="POST" enctype="multipart/form-data">
-    @csrf
-    <div class="row">
-        <div class="col">
-            <input type="file" name="image" class="form-control">
-        </div>
-        <div class="col">
-            <input type="submit" class="btn btn-primary" value="Subir">
-        </div>
-    </div>
-    
-</form>
+
 @endsection
