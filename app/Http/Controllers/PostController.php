@@ -13,6 +13,11 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+        
+        
+    }
     public function index()
     {
         $posts=Post::orderBy('created_at','desc')->paginate(5);

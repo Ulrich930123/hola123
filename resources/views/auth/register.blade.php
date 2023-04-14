@@ -24,6 +24,20 @@
                                 @enderror
                             </div>
                         </div>
+                        }
+                        <div class="row mb-3">
+                            <label for="rol_id" class="col-md-4 col-form-label text-md-end">{{ __('Rol_id') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="rol_id" type="text" class="form-control @error('rol_id') is-invalid @enderror" name="rol_id" value="{{ old('rol_id') }}" required autocomplete="rol_id" autofocus>
+
+                                @error('rol_id')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>

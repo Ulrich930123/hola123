@@ -10,4 +10,14 @@
         @endauth
     
 </div>
+<div class="card-body">
+    @if (session('status'))
+    <div class="alert alert-success" role="alert">
+        {{ session('status') }}
+
+    </div>
+        
+    @endif
+    {{ auth()->user()->rol_id }}
+</div>
 @endsection

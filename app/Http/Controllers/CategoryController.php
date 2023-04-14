@@ -12,6 +12,10 @@ class CategoryController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+        
+    }
     public function index()
     {
         $categories=Category::orderBy('created_at','desc')->paginate(5);
