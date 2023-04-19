@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name',120)->nullable()->default('text');
             $table->bigInteger('category_id')->unsigned()->nullable();
+            $table->string('autor')->nullable()->default('anonimo');
             $table->text('description')->nullable();
             $table->enum('state', ['post','no post'])->default('no post');
             $table->timestamps();

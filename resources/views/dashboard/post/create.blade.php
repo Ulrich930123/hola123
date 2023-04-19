@@ -5,12 +5,16 @@
 <form action="{{ route('post.store') }}" method="post">
     @csrf
     <main>
-    <<div class="form-group">
+    <div class="form-group">
         <label for="name">Titulo</label>
         <input class="form-control"type="text" name="name" id="name" ">
     </div>
+    <div class="form-group">
+        <label for="autor">Autor</label>
+        <input readonly class="form-control"type="text" name="autor" id="autor" value="{{ $autor }}">
+    </div>
 
-
+    
 
 {{-- fila 2 --}}
 

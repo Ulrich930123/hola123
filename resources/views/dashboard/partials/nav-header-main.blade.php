@@ -14,6 +14,7 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="{{ route('post.index') }}">Publicaciones</a>
             <a class="dropdown-item" href="{{ route('category.index') }}">Categorias</a>
+            <a class="dropdown-item" href="{{ route('reply.index') }}">Replicas</a>
             <a class="dropdown-item" href="{{ route('rol.index') }}">Roles</a>
             <a class="dropdown-item" href="{{ route('user.index') }}">Usuarios</a>
             <div class="dropdown-divider"></div>

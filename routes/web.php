@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\api\PostControllerApi;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ReplyController;
 use App\Http\Controllers\RolController;
 use App\Http\Controllers\UserController;
 
@@ -31,7 +32,7 @@ Route::group(['middleware'=>'auth'], function(){
     Route::resource('dashboard/rol',RolController::class)->middleware('auth');
     Route::resource('dashboard/user',UserController::class)->middleware('auth');
     Route::resource('/permission', PermissionController::class);
-    
+    Route::resource('dashboard/reply',ReplyController::class)->middleware('auth');
    
     Route::resource('usuarios',UserController::class);
     Route::get('/',[PostController::class,'index'])->name('index');

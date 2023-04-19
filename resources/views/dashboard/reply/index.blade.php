@@ -2,39 +2,31 @@
 @section('content')
 
 
-<a class="btn btn-success mt-3 mb-3" href={{ route('post.create') }}>
-Crear</a>
 
 <table class="table table-striped">
     <thead>
       <tr>
         <th scope="col">id</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Autor</th>
-        <th scope="col">CAtegoria</th>
-        <th scope="col">Contenido</th>
-        <th scope="col">EStado Publicacion</th>
+        <th scope="col">id_post</th>
+        <th scope="col">autor</th>
+        <th scope="col">Replica</th>
         <th scope="col">Creacion</th>
         <th scope="col">Actualizacion</th>
         <th scope="col">Accuones</th>
       </tr>
     </thead>
     <tbody>
-      @foreach ($posts as $post)
+      @foreach ($replies as $reply)
       <tr>
-        <td>{{ $post->id }}</td>
-        <td>{{ $post->name }}</td>
-        <td>{{ $post->autor }}</td>
-        <td>{{ $post->category_id }}</td>
-        <td>{{ $post->description }}</td>
-        <td>{{ $post->state }}</td>
-        <td>{{ $post->created_at->format('d-m-Y') }}</td>
-        <td>{{ $post->updated_at->format('d-m-Y') }}</td>
+        <td>{{ $reply->id }}</td>
+        <td>{{ $reply->id_post }}</td>
+        <td>{{ $reply->autor }}</td>
+        <td>{{ $reply->reply }}</td>
+        <td>{{ $reply->created_at->format('d-m-Y') }}</td>
+        <td>{{ $reply->updated_at->format('d-m-Y') }}</td>
         <td>
-            <a href="{{ route('post.show',$post->id) }}" class="btn btn-primary">Ver</a>
-            <a href="{{ route('post.edit',$post->id) }}" class="btn btn-primary">Actualizar</a>
-            <a href="{{ route('reply.create',$post->id) }}" class="btn btn-primary">Replicar</a>
-            <button data-toggle="modal" data-target="#deleteModal" data-id="{{ $post->id }}"
+            <a href="{{ route('reply.show',$reply->id) }}" class="btn btn-primary">Ver</a>
+            <button data-toggle="modal" data-target="#deleteModal" data-id="{{ $reply->id }}"
                 class="btn btn-danger">Eliminar</button>
         </td>
       </tr>
@@ -42,7 +34,7 @@ Crear</a>
       </tbody>
   </table>
 
-  {{ $posts->links() }}
+  {{ $replies->links() }}
   <div class="modal fade" id="deleteModal" tableindex="-1" role="dialog" area-labelledby="exampleModalLabel"
   aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -58,8 +50,8 @@ Crear</a>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          <form id="formDelete" method="POST" action="{{ route('post.destroy',0) }}" 
-          data-action="{{ route('post.destroy',0) }}">
+          <form id="formDelete" method="POST" action="{{ route('reply.destroy',0) }}" 
+          data-action="{{ route('reply.destroy',0) }}">
           @method('DELETE')
           @csrf
           <button type="submit" class="btn btn-danger">Borrar</button>

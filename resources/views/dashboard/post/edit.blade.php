@@ -11,7 +11,10 @@
     </div>
 
 
-
+    <<div class="form-group">
+        <label for="autor">Autor</label>
+        <input class="form-control"type="text" name="autor" id="autor" value="{{ old('autor',$post->autor) }}">
+    </div>
 {{-- fila 2 --}}
 
 <div class="form-group">

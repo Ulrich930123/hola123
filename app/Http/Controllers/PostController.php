@@ -7,6 +7,7 @@ use App\Http\Requests\StorePost;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -30,7 +31,8 @@ class PostController extends Controller
     public function create()
     {
         $categories=Category::all();
-        return view('dashboard.post.create',compact('categories'));
+        $autor=Auth::user()->name;
+        return view('dashboard.post.create',compact('categories','autor'));
     }
 
     /**

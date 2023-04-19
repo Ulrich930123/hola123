@@ -15,6 +15,7 @@ class UserController extends Controller
     {
         $this->middleware(['auth','rol.admin']);
         
+        
     }
     public function index()
     {
